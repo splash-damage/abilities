@@ -1,0 +1,45 @@
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: bold;
+  src: url('Gilroy-ExtraBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('Gilroy-Light.otf') format('opentype');
+}
+
+:root {
+  --base-font-size: 14px;
+  --theme-color   : #ff510d;
+  --base-background-color: #1E2229;
+
+  /* Menus */
+  --sidebar-background: #303742;
+
+  --heading-font-family: 'Gilroy', Helvetica, Arial, sans-serif;
+  --heading-h1-border-color: var(--theme-color);
+  --heading-h2-border-color: var(--theme-color);
+  --sidebar-nav-pagelink-background-image--active: url("./navbar_link.svg");
+  --sidebar-nav-pagelink-background-image--loaded: url("./navbar_link.svg");
+
+  /* Cover */
+  --cover-heading-font-weight: bold;
+  --cover-heading-color: var(--theme-color);
+  --cover-max-width                 : 60em;
+  --cover-background-blend-mode     : ;
+  --cover-background-color          : #1E2229;
+  --cover-background-image          : url(lines.svg);
+  --cover-background-mask-color     : #303742;
+  --cover-background-mask-opacity   : 0;
+  --cover-background-mask-visibility: ;
+  --cover-background-position       : center center;
+  --cover-background-repeat         : repeat-y;
+  --cover-background-size           : 100% auto;
+}
+
+.docsify-copy-code-button {
+  padding: 0.1em 0.1em;
+  font-size: 0.9em;
+}
