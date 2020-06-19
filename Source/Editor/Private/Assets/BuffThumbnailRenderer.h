@@ -41,7 +41,7 @@ class UBuffThumbnailRenderer : public UTextureThumbnailRenderer
 		Super::GetThumbnailSize(Icon, Zoom, OutWidth, OutHeight);
 	}
 
-	virtual void Draw(UObject* Object, int32 X, int32 Y, uint32 Width, uint32 Height, FRenderTarget* Target, FCanvas* Canvas) override
+	virtual void Draw(UObject* Object, int32 X, int32 Y, uint32 Width, uint32 Height, FRenderTarget* Target, FCanvas* Canvas, bool bAdditionalViewFamily) override
 	{
 		// Display icon as thumbnail
 		UBuff* Buff = Cast<UBuff>(Object);
@@ -51,7 +51,7 @@ class UBuffThumbnailRenderer : public UTextureThumbnailRenderer
 			Icon = GetDefaultIcon();
 		}
 
-		Super::Draw(Icon, X, Y, Width, Height, Target, Canvas);
+		Super::Draw(Icon, X, Y, Width, Height, Target, Canvas, bAdditionalViewFamily);
 	}
 	// End UThumbnailRenderer Object
 

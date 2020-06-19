@@ -33,7 +33,7 @@ class ABILITIES_API UStructContainerLibrary : public UBlueprintFunctionLibrary
 
 		// Get "Struct"
 		Stack.Step(Stack.Object, nullptr);
-		UProperty* Property = Stack.MostRecentProperty;
+		FProperty* Property = Stack.MostRecentProperty;
 		void* DataPtr = Stack.MostRecentPropertyAddress;
 
 		P_GET_UBOOL(bReplace);
@@ -53,7 +53,7 @@ class ABILITIES_API UStructContainerLibrary : public UBlueprintFunctionLibrary
 
 		// Get "Struct"
 		Stack.Step(Stack.Object, nullptr);
-		UProperty* Property = Stack.MostRecentProperty;
+		FProperty* Property = Stack.MostRecentProperty;
 		void* DataPtr = Stack.MostRecentPropertyAddress;
 
 		P_FINISH;
@@ -62,6 +62,6 @@ class ABILITIES_API UStructContainerLibrary : public UBlueprintFunctionLibrary
 		P_NATIVE_END;
 	}
 
-	static bool Generic_AddStruct(FStructContainer& Container, UProperty* Property, void* DataPtr, bool bReplace);
-	static bool Generic_GetStruct(FStructContainer& Container, UProperty* Property, void* DataPtr);
+	static bool Generic_AddStruct(FStructContainer& Container, FProperty* Property, void* DataPtr, bool bReplace);
+	static bool Generic_GetStruct(FStructContainer& Container, FProperty* Property, void* DataPtr);
 };

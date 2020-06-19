@@ -111,7 +111,7 @@ protected:
 public:
 
 #if WITH_EDITOR
-	virtual bool CanEditChange(const UProperty* InProperty) const override;
+	virtual bool CanEditChange(const FProperty* InProperty) const override;
 #endif
 
 	// Called from the asset object. Buffs don't get instanced in runtime.

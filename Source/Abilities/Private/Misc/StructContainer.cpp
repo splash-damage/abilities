@@ -22,7 +22,7 @@ int32 FStructContainer::GetOffset(UScriptStruct* Struct) const
 	return Item? Item->Offset : INDEX_NONE;
 }
 
-bool FStructContainer::Add(UStructProperty* Property, void* StructData, bool bReplace)
+bool FStructContainer::Add(FStructProperty* Property, void* StructData, bool bReplace)
 {
 	bool bWasAdded;
 	const int32 Offset = GetOrAddUninitialized(Property->Struct, bWasAdded);
@@ -119,17 +119,17 @@ bool FStructContainer::NetSerialize(FArchive& Ar, UPackageMap* Map, bool& bOutSu
 }
 
 
-bool UStructContainerLibrary::Generic_AddStruct(FStructContainer& Container, UProperty* Property, void* DataPtr, bool bReplace)
+bool UStructContainerLibrary::Generic_AddStruct(FStructContainer& Container, FProperty* Property, void* DataPtr, bool bReplace)
 {
-	auto* StructProp = Cast<UStructProperty>(Property);
+	auto* StructProp = CastField<FStructProperty>(Property);
 	MakeSureMsg(StructProp, TEXT("UStructContainerLibrary::AddStruct: Only structs can be added. Any other type is not supported.")) false;
 
 	return Container.Add(StructProp, DataPtr, bReplace);
 }
 
-bool UStructContainerLibrary::Generic_GetStruct(FStructContainer& Container, UProperty* Property, void* DataPtr)
+bool UStructContainerLibrary::Generic_GetStruct(FStructContainer& Container, FProperty* Property, void* DataPtr)
 {
-	auto* StructProp = Cast<UStructProperty>(Property);
+	auto* StructProp = CastField<FStructProperty>(Property);
 	MakeSureMsg(StructProp, TEXT("UStructContainerLibrary::GetStruct: Only structs can be contained. Any other type is not supported.")) false;
 
 	if(void* StructPtr = Container.Get(StructProp->Struct))

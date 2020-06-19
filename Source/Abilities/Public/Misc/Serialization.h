@@ -14,7 +14,9 @@
 //    - FRepLayout::SendProperties_BackwardsCompatible
 //    - FRepLayout::ReceiveProperties_BackwardsCompatible
 //    - UNetDriver::GetStructRepLayout
-#define ENABLE_NON_NATIVE_NETSERIALIZATION true
+#ifndef ENABLE_NON_NATIVE_NETSERIALIZATION
+#  define ENABLE_NON_NATIVE_NETSERIALIZATION false
+#endif
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS

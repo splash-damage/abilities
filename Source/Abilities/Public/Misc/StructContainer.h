@@ -77,7 +77,7 @@ public:
 	template<typename Type>
 	bool Add(Type&& Struct, bool bReplace = true);
 
-	bool Add(UStructProperty* Property, void* StructData, bool bReplace = true);
+	bool Add(FStructProperty* Property, void* StructData, bool bReplace = true);
 
 	void Empty();
 
