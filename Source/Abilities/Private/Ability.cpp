@@ -406,7 +406,9 @@ UWorld* UAbility::GetWorld() const
 	{
 		return nullptr;
 	}
-	return GetOwner()->GetWorld();
+
+	const auto* const Comp = GetAbilitiesComponent();
+	return Comp? Comp->GetWorld() : nullptr;
 }
 
 int32 UAbility::GetFunctionCallspace(UFunction* Function, FFrame* Stack)

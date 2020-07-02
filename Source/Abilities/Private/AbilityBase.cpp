@@ -202,15 +202,18 @@ UAbilitiesComponent* UAbilityBase::GetAbilitiesComponent() const
 
 AActor* UAbilityBase::GetOwner() const
 {
-	return GetAbilitiesComponent()->GetOwner();
+	const auto* const Comp = GetAbilitiesComponent();
+	return Comp? Comp->GetOwner() : nullptr;
 }
 
 bool UAbilityBase::HasAuthority() const
 {
-	return GetAbilitiesComponent()->HasAuthority();
+	const auto* const Comp = GetAbilitiesComponent();
+	return Comp? Comp->HasAuthority() : false;
 }
 
 bool UAbilityBase::IsLocallyOwned() const
 {
-	return GetAbilitiesComponent()->IsLocallyOwned();
+	const auto* const Comp = GetAbilitiesComponent();
+	return Comp? Comp->IsLocallyOwned() : false;
 }

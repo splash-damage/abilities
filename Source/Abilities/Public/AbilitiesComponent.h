@@ -342,7 +342,7 @@ public:
 	bool HasBuffs(const TSet<UBuff*>& InBuffs, EAllAny Mode = EAllAny::Any) const;
 
 	UFUNCTION(BlueprintPure, Category = "AbilityComponent|Buffs")
-	int32 GetBuffCount(UBuff* Buff) const;
+	int32 GetBuffCount(const UBuff* Buff) const;
 
 	UFUNCTION(BlueprintPure, Category = "AbilityComponent|Buffs")
 	bool HasBuffOfClass(TSubclassOf<UBuff> Class) const
@@ -467,7 +467,7 @@ inline bool UAbilitiesComponent::HasAuthority() const
 	return GetOwner()->HasAuthority();
 }
 
-inline int32 UAbilitiesComponent::GetBuffCount(UBuff* Buff) const
+inline int32 UAbilitiesComponent::GetBuffCount(const UBuff* Buff) const
 {
 	if (const auto* BuffCount = Buffs.Find(Buff))
 	{
