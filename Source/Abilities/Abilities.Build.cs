@@ -16,7 +16,8 @@ public class Abilities : ModuleRules
 			"Core",
 			"CoreUObject",
 			"Engine",
-			"GameplayTags"
+			"GameplayTags",
+			"DeveloperSettings"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {});
