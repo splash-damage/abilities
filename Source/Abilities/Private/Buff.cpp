@@ -4,7 +4,7 @@
 #include "AbilitiesComponent.h"
 
 #if WITH_EDITOR
-bool UBuff::CanEditChange(const UProperty* InProperty) const
+bool UBuff::CanEditChange(const FProperty* InProperty) const
 {
 	bool bCanEdit = Super::CanEditChange(InProperty);
 
